@@ -1,0 +1,22 @@
+<nav class="container-fluid fondo-nabvar navbar navbar-expand-lg p-0 z-3">
+    <div class="container nav navbar p-0 d-flex justify-content-between align-items-center">
+        <div class=" align-middle">
+            <h1 class="display-6 fs-3 m-0">
+                Alquimia
+                <span class="text-white">
+                    Culinaria
+                </span>
+            </h1>
+        </div>
+        <div class="collapse navbar-collapse justify-content-end" id="navbar">
+            <ul class="navbar-nav nav gap-3 p-0">
+                <li *ngFor="let opcion of lista_direcciones">
+                    <a [routerLink]="opcion.direccion" class="nav-link fs-5 color-letra fw-bold">
+                        {{opcion.nombre}}
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+

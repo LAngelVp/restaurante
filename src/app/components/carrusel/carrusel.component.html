@@ -1,0 +1,15 @@
+<div id="carrusel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+    <div  class="carousel-inner" [ngStyle]="style">
+        <div *ngFor="let elemento of lista; let i = index" class="carousel-item position-relative" [ngClass]="{'active': i === 0}">
+            <img [src]="elemento.strMealThumb" class="imagen_carrusel" alt="elemento.strMeal">
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carrusel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon btn btn-warning" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carrusel" data-bs-slide="next">
+        <span class="carousel-control-next-icon btn btn-warning" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
