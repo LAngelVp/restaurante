@@ -11,6 +11,47 @@
 .fondo_slogans
     z-index: 1
     background: $color-contenedor-amarillo-opaco
+.contenedor_cuadricula_padre
+    // display: flex
+    display: grid
+    grid-template-columns: 1fr 1fr
+    max-height: 700px
+.contenedor_cuadricula_derecha
+    display: grid
+    grid-template-rows: 1fr 2fr
+.contenedor_cuadricula
+    display: flex
+    position: relative
+    justify-content: center
+    gap: 15px
+    width: 100%
+    max-height: 100%
+        
+.contenedor_imagen
+    position: relative
+    width: 200px
+    height: 100%
+    &:first-child
+        .img_cuadricula
+            top: -50px
+    &:last-child
+        .img_cuadricula
+            bottom: -50px
+
+.img_cuadricula
+    position: absolute
+    object-fit: cover
+    width: 100%
+    height: 100%
+    transition: all 1s ease
+    &:hover
+        transform: scale(1.03) 
+    
+    
+
+
+
+
 
 
 
