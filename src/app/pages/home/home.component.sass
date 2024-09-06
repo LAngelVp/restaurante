@@ -10,46 +10,80 @@
     object-position: left center
 .fondo_slogans
     z-index: 1
-    background: $color-contenedor-amarillo-opaco
+    background: $color-contenedor-amarillo-transparente
 .contenedor_cuadricula_padre
-    // display: flex
-    display: grid
-    grid-template-columns: 1fr 1fr
-    max-height: 700px
+    display: flex
+    gap: 2rem
+    width: 100%
+    min-height: 800px
+.contenedor_cuadricula_padre_general
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0)70%, rgba(0, 0, 0, 1))
+.contenedor_imagen_calidad
+    min-width: 40%
 .contenedor_cuadricula_derecha
-    display: grid
-    grid-template-rows: 1fr 2fr
+    display: flex
+    width: 100%
+    flex-direction: column
+    @media (min-width: 768px)
+        max-width: 50%
+
+.contenedor_texto_calidad
+    background: $color-contenedor-naranja
+    width: 95%
+    text-align: center
+    margin: auto
+    padding: 20px
+    border-radius: 12px
+    box-shadow: 0 0 10px
+
 .contenedor_cuadricula
     display: flex
     position: relative
     justify-content: center
-    gap: 15px
+    gap: 2rem
     width: 100%
-    max-height: 100%
+    height: 100%
+    margin-top: 5rem
+    margin-bottom: 5rem
         
 .contenedor_imagen
     position: relative
+    min-width: 50px
     width: 200px
     height: 100%
+    transition: all 1s ease
     &:first-child
         .img_cuadricula
             top: -50px
     &:last-child
         .img_cuadricula
             bottom: -50px
-
+    &:hover
+        @media (min-width: 768px) 
+            width: 250px
 .img_cuadricula
     position: absolute
     object-fit: cover
     width: 100%
     height: 100%
+    border-radius: 12px
     transition: all 1s ease
     &:hover
-        transform: scale(1.03) 
-    
-    
+        @media (min-width: 768px) 
+            transform: scale(1.03)
+.parallax
+    background-image: url('https://images.pexels.com/photos/260922/pexels-photo-260922.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')
+    background-attachment: fixed
+    background-position: center
+    background-repeat: no-repeat
+    background-size: cover
+    display: flex
+    height: 70vh
 
-
+.sombra_foto
+    box-shadow: 7px 5px 50px white
+    border-radius: 50%
+    
 
 
 

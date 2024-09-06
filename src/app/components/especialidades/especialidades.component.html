@@ -1,15 +1,26 @@
 <div class="container-fluid contenedor_principal">
     <div class=" container flex-md-row mx-auto p-0 mt-4 contenedor">
         <div class="col p-0 d-flex flex-column gap-4 ps-1 py-4 pe-5">
-            <h2 class="fs_subtitulo">
-                En cada plato, una obra de arte que cuenta historias y despierta todos tus sentidos
+            <h2 class="fs_contenido fw-bold m-0 p-0">
+                {{titulo}}
+            </h2>
+            <h2 class="fs_titulo m-0 p-0">
+                Especialidad:
+                <span class="fs_slogans text-white nombre_plato">
+                    {{nombre_platillo_carrusel}}
+                </span>
             </h2>
             <span class="fs_contenido">
-                Descubre una experiencia culinaria única donde cada plato es una obra de arte, contando historias y despertando todos tus sentidos con sabores exquisitos y presentaciones inolvidables.
+                {{descripcion}}
             </span>
+            <div class="contenedor_imagenes_iconos">
+                <img class="img_icono_especialidades" src="https://www.svgrepo.com/show/429376/food-hor-mok.svg" alt="">
+                <img class="img_icono_especialidades" src="https://www.svgrepo.com/show/429377/bibimbub-cooking-food.svg" alt="">
+                <img class="img_icono_especialidades" src="https://www.svgrepo.com/show/429378/fish-fishing-food.svg" alt="">
+            </div>
         </div>
-        <div class="col p-0">
-            <app-carrusel [lista]="lista_completa" [height_imagen]="'400px'"/>
+        <div class="col p-0 mb-4 mb-md-0">
+            <app-carrusel [lista]="lista_completa"  (nombre_platillo)="obtener_nombre_platillo($event)"/>
         </div>
     </div>
 </div>

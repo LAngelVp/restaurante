@@ -1,7 +1,10 @@
 <div id="carrusel" class="carousel slide carousel-fade" data-bs-ride="carousel">
-    <div  class="carousel-inner" [ngStyle]="style">
+    <div  class="carousel-inner h-100" [ngStyle]="style">
         <div *ngFor="let elemento of lista; let i = index" class="carousel-item position-relative" [ngClass]="{'active': i === 0}">
             <img [src]="elemento.strMealThumb" class="imagen_carrusel" alt="elemento.strMeal">
+            <p class="d-none" id="nombre_platillo">
+                {{elemento.strMeal}}
+            </p>
         </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carrusel" data-bs-slide="prev">

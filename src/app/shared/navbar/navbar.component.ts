@@ -24,7 +24,7 @@ export class NavbarComponent {
       direccion: '/menu-de-alimentos'
     },
     {
-      nombre: 'contacto',
+      nombre: 'Contacto',
       direccion: '/informacion-de-contacto'
     }
   ];
