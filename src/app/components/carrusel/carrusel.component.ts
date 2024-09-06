@@ -44,11 +44,13 @@ export class CarruselComponent implements AfterViewInit {
   }
 
   emitir_nombre():void{
-    const elementoActivo = document.querySelector('.carousel-item.active') as HTMLElement;
-    if (elementoActivo) {
-      const platilloElement = elementoActivo.querySelector('#nombre_platillo') as HTMLElement;
-      if (platilloElement) {
-        this.nombre_platillo.emit(platilloElement.innerText.trim());
+    if (typeof document !== 'undefined') {
+      const elementoActivo = document.querySelector('.carousel-item.active') as HTMLElement;
+      if (elementoActivo) {
+        const platilloElement = elementoActivo.querySelector('#nombre_platillo') as HTMLElement;
+        if (platilloElement) {
+          this.nombre_platillo.emit(platilloElement.innerText.trim());
+        }
       }
     }
   }
