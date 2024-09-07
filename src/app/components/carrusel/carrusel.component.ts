@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, Output, EventEmitter, AfterViewInit } from '@angular/core';
+import { Component, Input, Output, EventEmitter, AfterViewInit, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-carrusel',

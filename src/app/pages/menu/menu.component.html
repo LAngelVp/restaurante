@@ -1,1 +1,19 @@
-<p>menu works!</p>
+<div class="d-flex flex-wrap gap-4 justify-content-center pt-5">
+    <div *ngFor="let comida of todas_las_comidas" class="contenedor_comida">
+        <img class="imagen w-100" [src]="comida.strMealThumb" alt="">
+        <h3 class=" text-wrap">
+            <strong>
+                {{comida.strMeal}}
+            </strong>
+        </h3>
+        <span class=" text-wrap">
+            {{comida.strCategory}}
+        </span>
+        <span>
+            {{comida.strArea}}
+        </span>
+        <p class=" text-wrap">
+            Price: {{comida.idMeal | currency:'USD':'symbol':'1.2-2'}}
+        </p>
+    </div>
+</div>

@@ -11,9 +11,9 @@ export class ApiTheMealDBService {
 
   constructor(private http: HttpClient) { }
 
-  // getAll():Observable<any>{
-  //   return this.http.get(`${this.urlBaseApi}/`);
-  // }
+  getAllMeal():Observable<any>{
+    return this.http.get(`${this.urlBaseApi}/search.php?s=`);
+  }
   // Busca todas las comidas en base a una categoria
   getMealByCategory(category: string): Observable<any>{
     return this.http.get(`${this.urlBaseApi}/filter.php?c=${category}`);

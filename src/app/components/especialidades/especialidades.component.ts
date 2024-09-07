@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
 import { CarruselComponent } from "../carrusel/carrusel.component";
 import { ApiTheMealDBService } from '../../services/api-the-meal-db.service';
 import { CommonModule } from '@angular/common';
@@ -24,7 +24,7 @@ export class EspecialidadesComponent implements OnInit {
 
   lista_completa : any[] = [];
 
-  nombre_platillo_carrusel: string = '';
+  nombre_platillo_carrusel: string = 'Busca una opción';
 
 
   lista_especialidades: string[] = [
@@ -38,6 +38,7 @@ export class EspecialidadesComponent implements OnInit {
 
 
   ngOnInit(): void {
+    
     for (let i of this.lista_especialidades ){
       this.api.getOnlyOneMeal(i).subscribe(data_platillo => {
         if (data_platillo.meals) {
@@ -47,8 +48,14 @@ export class EspecialidadesComponent implements OnInit {
     }
   }
 
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['lista']) {
+      console.log(this.nombre_platillo_carrusel); // Llama a emitir_nombre cuando la lista cambie
+    }
+  }
+
   obtener_nombre_platillo(nombre: string): void{
     this.nombre_platillo_carrusel = nombre;
-    console.log('Current Meal Name:', this.nombre_platillo_carrusel);
+    // console.log('Current Meal Name:', this.nombre_platillo_carrusel);
   }
 }
