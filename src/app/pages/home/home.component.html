@@ -5,7 +5,7 @@
         </div>
         <div class="position-absolute h-100 w-100 d-flex justify-content-center align-items-center">
             <div class="position-relative w-100 d-flex flex-column justify-content-center align-items-center">
-                <h2 class="w-75 text-center display-5 fondo_slogans p-4 rounded-3 fs_titulo">
+                <h2 class="w-75 text-center display-5 fondo_slogans p-4 rounded-3 fs_titulo fw-bold">
                     Donde cada plato es un poema y cada bocado una historia por descubrir
                 </h2>
             </div>
@@ -20,24 +20,24 @@
     <div class="container-fluid mt-5 contenedor_cuadricula_padre_general">
         <div class="p-0 m-0 py-5 contenedor_cuadricula_padre">
             <div class="d-none d-md-flex w-50 contenedor_imagen_calidad">
-                <img class="w-100 h-100 m-0 p-0"
+                <img class=" w-100 h-100 m-0 p-0 "
                 src="https://images.pexels.com/photos/4253320/pexels-photo-4253320.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="">
             </div>
             <div class="contenedor_cuadricula_derecha">
                 <div class="">
                     <div class="contenedor_texto_calidad">
-                        <h3>
+                        <h3 class="fs_subtitulo fw-bold">
                             {{titulo_calidad}}
                         </h3>
-                        <span>
+                        <span class="fs_contenido">
                             {{descripcion_calidad}}
                         </span>
                     </div>
                 </div>
                 <div class="contenedor_cuadricula">
                     <div *ngFor="let imagen of lista_imagenes_calidad"
-                    class="contenedor_imagen position-relative">
-                        <img class="img_cuadricula" [src]="imagen" alt="">
+                    class="contenedor_imagen position-relative ">
+                        <img class="img_cuadricula construir_izquierda" [src]="imagen" alt="">
                     </div>
                 </div>
             </div>
@@ -46,23 +46,27 @@
 
 
     <div class="w-100 parallax">
-        <div class="container d-flex">
-            <div class="d-flex flex-column justify-content-center gap-2 w-75">
-                <h2 class="text-white">
-                    Quienes somos
-                </h2>
-                <h4 class="text-white">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui sequi est repellendus fugit, sit ipsam!
+        <div class="container d-flex flex-column flex-lg-row gap-4 align-items-center">
+            <div class="d-flex flex-column align-items-center justify-content-center gap-2 aparicion_izquierda">
+                <h4 class="text-white fs_slogans h1">
+                    Misión
                 </h4>
-                <p class="text-white">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, debitis ducimus quo sunt dolore dolorum necessitatibus id maiores molestiae asperiores quis ipsa, numquam earum incidunt repellendus enim? Eaque, quisquam culpa?
+                <p class="text-white fs_contenido fw-bold">
+                    Ofrecer una experiencia culinaria excepcional que combine sabores auténticos y técnicas innovadoras en un entorno acogedor y elegante. Nos comprometemos a utilizar ingredientes frescos y de alta calidad para crear platos que no solo satisfagan, sino que sorprendan y deleiten a nuestros clientes. A través de un servicio atento y personalizado, buscamos no solo satisfacer el apetito, sino también ofrecer momentos inolvidables en cada visita, promoviendo un ambiente de calidez y satisfacción.
                 </p>
             </div>
-            <div class="py-4 ">
-                <img class="h-100 sombra_foto"
+            <div class="contenedor_foto">
+                <img class="foto"
                 src="https://images.pexels.com/photos/2102934/pexels-photo-2102934.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="">
             </div>
-
+            <div class="d-flex flex-column align-items-center justify-content-center gap-2">
+                <h4 class="text-white fs_slogans h1">
+                    Visión
+                </h4>
+                <p class="text-white fs_contenido fw-bold">
+                    Ser el restaurante de referencia en nuestra comunidad, reconocido por nuestra creatividad gastronómica, atención al detalle y compromiso con la calidad. Queremos inspirar y deleitar a nuestros clientes con una propuesta culinaria única, que combine innovación y tradición. Nuestra meta es crecer sosteniblemente, manteniendo siempre un enfoque en la excelencia y en la satisfacción del cliente, al tiempo que fomentamos un ambiente de trabajo positivo y enriquecedor para nuestro equipo.
+                </p>
+            </div>
         </div>
     </div>
 </div>

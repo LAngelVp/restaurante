@@ -22,8 +22,65 @@
     font-family: "Open Sans", sans-serif
     font-optical-sizing: auto
 
+@media (max-width:576px)
+    .fs_titulo
+        font-size: 24px
+    .fs_subtitulo
+        font-size: 18px
+    .fs_slogans
+        font-size: 20px
+    .fs_contenido
+        font-size: 14px
 
+@media (min-width:576px)
+    .fs_titulo
+        font-size: 28px
+    .fs_subtitulo
+        font-size: 22px
+    .fs_slogans
+        font-size: 26px
+    .fs_contenido
+        font-size: 14px
 
+@media (min-width:768px)
+    .fs_titulo
+        font-size: 32px
+    .fs_subtitulo
+        font-size: 25px
+    .fs_slogans
+        font-size: 29px
+    .fs_contenido
+        font-size: 16px
+
+@media (min-width:992px)
+    .fs_titulo
+        font-size: 36px
+    .fs_subtitulo
+        font-size: 28px
+    .fs_slogans
+        font-size: 32px
+    .fs_contenido
+        font-size: 18px
+
+@media (min-width:1200px)
+    .fs_titulo
+        font-size: 38px
+    .fs_subtitulo
+        font-size: 30px
+    .fs_slogans
+        font-size: 34px
+    .fs_contenido
+        font-size: 20px
+
+@media (min-width:1400px)
+    .fs_titulo
+        font-size: 42px
+    .fs_subtitulo
+        font-size: 35px
+    .fs_slogans
+        font-size: 37px
+    .fs_contenido
+        font-size: 22px
     
 // COLORES
 $color-fondo: #ffffff
@@ -39,3 +96,45 @@ $color-contenedor-rojo: #FF5C4D
 $color-contenedor-rojo-transparente: #ff5c4da6
 $color-contenedor-naranja:#FF9636
 $color-contenedor-naranja-transparente:#ff97367b
+
+@keyframes aparecer_desde_derecha
+    from
+        opacity: 0
+        transform: translateX(50px)
+    to
+        opacity: 1
+        transform: translateX(0px)
+
+@keyframes aparecer_desde_izquierda
+    from
+        opacity: 0
+        transform: translateX(-50px)
+    to
+        opacity: 1
+        transform: translateX(0px)
+
+@keyframes construir_desde_izquierda
+    from
+        width: 0
+    to
+        width: 100%
+
+.aparicion_derecha
+    animation-name: aparecer_desde_derecha
+    animation-duration: 5s
+    animation-timing-function: ease
+
+.aparicion_izquierda
+    animation-name: aparecer_desde_izquierda
+    animation-duration: 5s
+    animation-timing-function: ease
+
+.construir_izquierda
+    view-timeline-name: --image
+    view-timeline-axis: block
+    animation-timeline: --image
+    animation-name: construir_desde_izquierda
+    animation-range: entry 20% cover 30%
+    animation-fill-mode: both
+
+

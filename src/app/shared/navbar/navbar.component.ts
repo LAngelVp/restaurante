@@ -24,9 +24,13 @@ export class NavbarComponent {
       direccion: '/menu-de-alimentos'
     },
     {
+      nombre: 'Quejas y sujerencias',
+      direccion: '/'
+    },
+    {
       nombre: 'Contacto',
       direccion: '/informacion-de-contacto'
-    }
+    },
   ];
 
 }
