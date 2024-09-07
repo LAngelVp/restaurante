@@ -18,6 +18,9 @@
                 <img class="img_icono_especialidades" src="https://www.svgrepo.com/show/429377/bibimbub-cooking-food.svg" alt="">
                 <img class="img_icono_especialidades" src="https://www.svgrepo.com/show/429378/fish-fishing-food.svg" alt="">
             </div>
+            <div class="d-flex justify-content-end">
+                <a [routerLink]="['/menu-de-alimentos']" class="btn btn btn-outline-light fs_contenido fw-bolder">Ir al menú</a>
+            </div>
         </div>
         <div class="col p-0 mb-4 mb-md-0 aparicion_derecha">
             <app-carrusel [lista]="lista_completa"  (nombre_platillo)="obtener_nombre_platillo($event)"/>

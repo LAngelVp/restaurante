@@ -2,13 +2,17 @@ import { Component, Input, OnInit } from '@angular/core';
 import { CarruselComponent } from "../carrusel/carrusel.component";
 import { ApiTheMealDBService } from '../../services/api-the-meal-db.service';
 import { CommonModule } from '@angular/common';
+import { MenuComponent } from '../../pages/menu/menu.component';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-especialidades',
   standalone: true,
   imports: [
     CommonModule,
-    CarruselComponent
+    CarruselComponent,
+    MenuComponent,
+    RouterModule
   ],
   templateUrl: './especialidades.component.html',
   styleUrl: './especialidades.component.sass'
