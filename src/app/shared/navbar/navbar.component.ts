@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 import { RouterLink, RouterModule } from '@angular/router';
 
 @Component({
@@ -32,5 +32,13 @@ export class NavbarComponent {
       direccion: '/informacion-de-contacto'
     },
   ];
+
+  @ViewChild('barra_navegacion') burger!: ElementRef;
+  @HostListener('document: click', ['$event'])
+  clic_opcion(event : Event){
+    if (this.burger.nativeElement.classList.contains('show')){
+      this.burger.nativeElement.classList.remove('show');
+    }
+  }
 
 }
