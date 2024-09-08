@@ -4,12 +4,14 @@
             <h2 class="fs_subtitulo fw-bold m-0 p-0">
                 {{titulo}}
             </h2>
-            <h2 class="fs_subtitulo m-0 p-0">
+            <h2 *ngIf="nombre_platillo_carrusel !== 'Mejores opciones'; else sin_especialidad" class="fs_subtitulo m-0 p-0">
                 Especialidad:
                 <span class="fs_slogans text-white nombre_plato">
                     {{nombre_platillo_carrusel}}
                 </span>
             </h2>
+            <ng-template #sin_especialidad>
+            </ng-template>
             <span class="fs_contenido">
                 {{descripcion}}
             </span>

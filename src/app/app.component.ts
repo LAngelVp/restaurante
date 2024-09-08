@@ -4,6 +4,7 @@ import { RouterOutlet } from '@angular/router';
 import { HomeComponent } from "./pages/home/home.component";
 import { HttpClientModule } from '@angular/common/http';
 import { NavbarComponent } from "./shared/navbar/navbar.component";
+import { FooterbarComponent } from "./shared/footerbar/footerbar.component";
 
 @Component({
   selector: 'app-root',
@@ -11,7 +12,8 @@ import { NavbarComponent } from "./shared/navbar/navbar.component";
   imports: [
     CommonModule,
     RouterOutlet,
-    NavbarComponent
+    NavbarComponent,
+    FooterbarComponent
 ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.sass'

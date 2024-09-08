@@ -4,6 +4,8 @@ import { ApiTheMealDBService } from '../../services/api-the-meal-db.service';
 import { CommonModule } from '@angular/common';
 import { MenuComponent } from '../../pages/menu/menu.component';
 import { RouterModule } from '@angular/router';
+import { Subscription } from 'rxjs';
+
 
 @Component({
   selector: 'app-especialidades',
@@ -24,7 +26,7 @@ export class EspecialidadesComponent implements OnInit {
 
   lista_completa : any[] = [];
 
-  nombre_platillo_carrusel: string = 'Busca una opción';
+  nombre_platillo_carrusel: string = 'Mejores opciones';
 
 
   lista_especialidades: string[] = [
@@ -33,29 +35,25 @@ export class EspecialidadesComponent implements OnInit {
     'Bean & Sausage Hotpot',
     'Garides Saganaki'
   ];
-
+  private subscriptions: Subscription[] = [];
   constructor(private api: ApiTheMealDBService){}
 
 
   ngOnInit(): void {
-    
-    for (let i of this.lista_especialidades ){
-      this.api.getOnlyOneMeal(i).subscribe(data_platillo => {
-        if (data_platillo.meals) {
-          this.lista_completa.push(...data_platillo.meals);
-        }
-      });
-    }
-  }
-
-  ngOnChanges(changes: SimpleChanges): void {
-    if (changes['lista']) {
-      console.log(this.nombre_platillo_carrusel); // Llama a emitir_nombre cuando la lista cambie
-    }
+    setTimeout(() => {
+      for (let i of this.lista_especialidades ){
+        this.api.getOnlyOneMeal(i).subscribe(data_platillo => {
+          if (data_platillo.meals) {
+            this.lista_completa.push(...data_platillo.meals);
+          }
+        });
+      }
+    });
   }
 
   obtener_nombre_platillo(nombre: string): void{
-    this.nombre_platillo_carrusel = nombre;
-    // console.log('Current Meal Name:', this.nombre_platillo_carrusel);
+    setTimeout(() => {
+      this.nombre_platillo_carrusel = nombre;
+    });
   }
 }

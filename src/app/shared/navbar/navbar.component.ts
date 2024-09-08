@@ -25,11 +25,11 @@ export class NavbarComponent {
     },
     {
       nombre: 'Quejas y sujerencias',
-      direccion: '/'
+      direccion: '/buzon-de-quejas-y-sugerencias'
     },
     {
       nombre: 'Contacto',
-      direccion: '/informacion-de-contacto'
+      direccion: ''
     },
   ];
 
@@ -41,4 +41,7 @@ export class NavbarComponent {
     }
   }
 
+  scrollToBottom() {
+    window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+  }
 }

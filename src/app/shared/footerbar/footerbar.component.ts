@@ -8,5 +8,6 @@ import { Component } from '@angular/core';
   styleUrl: './footerbar.component.sass'
 })
 export class FooterbarComponent {
+  correo: string = 'ejemplo@ejemplo.com';
 
 }
