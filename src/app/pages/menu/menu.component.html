@@ -1,19 +1,37 @@
 <div class="d-flex flex-wrap gap-4 justify-content-center pt-5">
-    <div *ngFor="let comida of todas_las_comidas" class="contenedor_comida">
-        <img class="imagen w-100" [src]="comida.strMealThumb" alt="">
-        <h3 class=" text-wrap">
-            <strong>
-                {{comida.strMeal}}
-            </strong>
-        </h3>
-        <span class=" text-wrap">
-            {{comida.strCategory}}
-        </span>
-        <span>
-            {{comida.strArea}}
-        </span>
-        <p class=" text-wrap">
-            Price: {{comida.idMeal | currency:'USD':'symbol':'1.2-2'}}
-        </p>
+    <div *ngFor="let comida of todas_las_comidas" class="contenedor_comida card justify-content-between">
+        <img class="card-img-top w-100" [src]="comida.strMealThumb" alt="">
+        <div class="d-flex flex-wrap justify-content-between align-items-center px-3 pt-3 pb-4">
+            <h3 class="card-title text-wrap">
+    
+                <strong>
+                    {{comida.strMeal}}
+                </strong>
+            </h3>
+            <p class="p-0 m-0 text-wrap text-muted fw-bold">
+                Price: {{comida.idMeal | currency:'USD':'symbol':'1.2-2'}}
+            </p>
+        </div>
+        <div class="card-text px-3">
+            <h5 class=" text-wrap">
+                Category: 
+                <span class="text-muted">
+                    {{comida.strCategory}}
+                </span>
+            </h5>
+            <h5>
+                Origin: 
+                <span class="text-muted">
+                    {{comida.strArea}}
+                </span>
+            </h5>
+        </div>
+        <div class="d-flex">
+            <button type="button" class="btn btn-outline-warning w-100 mx-3 my-3 fw-bold"
+            (click)="abrir_modal(comida.strMeal, comida.strInstructions)">
+                Descripción
+            </button>
+        </div>
     </div>
 </div>
+<app-modal [detalle]="detalle" [nombre]="nombre" [mostrarModal]="mostrarModal" (cerrar)="cerrarModal()"></app-modal>

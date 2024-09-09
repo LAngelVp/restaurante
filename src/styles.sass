@@ -137,4 +137,26 @@ $color-contenedor-naranja-transparente:#ff97367b
     animation-range: entry 20% cover 30%
     animation-fill-mode: both
 
+@keyframes enter
+    from
+        opacity: 0
+        transform: scale(0.9)
+    to
+        opacity: 1
+        transform: scale(1)
+@keyframes exit
+    from
+        opacity: 1
+        transform: scale(1)
+    to
+        opacity: 0
+        transform: scale(0)
+        
+::view-transition-old(elemento) 
+    animation: exit 1s ease 0s normal forwards
+::view-transition-new(elemento) 
+    animation: enter 2s ease 0s 1 normal forwards
+
+.elemento
+    view-transition-name: elemento
 

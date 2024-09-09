@@ -1,0 +1,24 @@
+<div class="modal" [ngClass]="{'modal-show': mostrarModal}">
+    <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content" (click)="$event.stopPropagation()">
+            <div class=" modal-header">
+                <h4 class="fs_slogans">
+                    {{nombre}}
+                </h4>
+            </div>
+            <div class="modal-body">
+                <span class="fs_contenido fw-bold">
+                    Detalles del platillo
+                </span>
+                <p class="fs_contenido">
+                    {{ detalle }}
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-warning" (click)="cerrarModal()">
+                    Cerrar
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
